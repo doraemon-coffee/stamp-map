@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-スタバ全国店舗データを取得して index.html を更新するスクリプト (改訂版)
+スタバ全国店舗データを取得して index.html を更新するスクリプト (v3)
 
-変更点:
-- API レスポンスのフィールド名を自動探索 (複数パターンを試行)
-- 初回ストアのフィールドを出力するデバッグログ
-- NEWS パーサーがコメント例を誤検出しないよう修正
-- 有効データが極端に少ない場合は更新を中止する安全機能
+v3 の変更点:
+- 緯度経度フィールドを「location_jp」(カンマ区切り文字列) から正しくパース
 """
 
 import json
@@ -32,14 +29,6 @@ HEADERS = {
 INDEX_HTML = Path("index.html")
 NEWS_RETENTION_DAYS = 90
 
-# 候補となるフィールド名 (上から順に試す)
-LAT_KEYS = ["latitude", "location_jp_latitude", "lat", "location_latitude", "location_jp.latitude"]
-LNG_KEYS = ["longitude", "location_jp_longitude", "lng", "location_longitude", "location_jp.longitude"]
-NAME_JP_KEYS = ["name", "name_jp", "store_name", "store_name_jp"]
-NAME_EN_KEYS = ["name_en", "store_name_en", "english_name"]
-PREF_KEYS = ["pref_name_jp", "address_1", "prefecture", "pref"]
-CITY_KEYS = ["address_2", "city", "municipality"]
-
 
 def fetch_page(start: int) -> dict:
     params = {
@@ -61,18 +50,6 @@ def fetch_all_stores() -> list[dict]:
     first = fetch_page(0)
     total = first["hits"]["found"]
     print(f"   全店舗数: {total}")
-
-    # ★デバッグ: 最初の店舗のフィールドを表示
-    if first["hits"]["hit"]:
-        sample = first["hits"]["hit"][0]
-        print(f"🔍 サンプル店舗 (id={sample.get('id')}) のフィールド一覧:")
-        fields = sample.get("fields", {})
-        for k, v in sorted(fields.items()):
-            v_str = str(v)
-            if len(v_str) > 80:
-                v_str = v_str[:80] + "..."
-            print(f"     {k}: {v_str}")
-
     all_hits = list(first["hits"]["hit"])
     start = PAGE_SIZE
     while start < total:
@@ -82,39 +59,46 @@ def fetch_all_stores() -> list[dict]:
         if start % 500 == 0 or start + PAGE_SIZE >= total:
             print(f"   取得中... {len(all_hits)}/{total}")
         start += PAGE_SIZE
-
     print(f"✅ 全 {len(all_hits)} 件取得完了")
     return all_hits
 
 
-def get_field(fields: dict, candidates: list[str], default=""):
-    for k in candidates:
-        if k in fields:
-            v = fields[k]
-            if isinstance(v, list):
-                v = v[0] if v else default
-            if v not in (None, "", []):
-                return v
-    return default
+def get_first(fields: dict, key: str, default=""):
+    """フィールド値を取得 (リストなら先頭要素)"""
+    v = fields.get(key, default)
+    if isinstance(v, list):
+        return v[0] if v else default
+    return v
+
+
+def parse_location(loc_str) -> tuple[float, float]:
+    """カンマ区切りの '緯度,経度' 文字列をパース"""
+    if not loc_str:
+        return 0.0, 0.0
+    if isinstance(loc_str, list):
+        loc_str = loc_str[0] if loc_str else ""
+    parts = str(loc_str).split(",")
+    if len(parts) >= 2:
+        try:
+            return float(parts[0].strip()), float(parts[1].strip())
+        except (ValueError, TypeError):
+            return 0.0, 0.0
+    return 0.0, 0.0
 
 
 def normalize_store(hit: dict) -> dict:
     f = hit.get("fields", {})
-    name_jp = str(get_field(f, NAME_JP_KEYS, "")).strip()
-    name_en = str(get_field(f, NAME_EN_KEYS, "")).strip()
-    pref = str(get_field(f, PREF_KEYS, "")).strip()
-    city = str(get_field(f, CITY_KEYS, "")).strip()
-    try:
-        lat = float(get_field(f, LAT_KEYS, 0))
-        lng = float(get_field(f, LNG_KEYS, 0))
-    except (TypeError, ValueError):
-        lat = lng = 0.0
+
+    # 緯度経度: location_jp を優先 (より正確)、なければ location
+    loc = get_first(f, "location_jp") or get_first(f, "location") or ""
+    lat, lng = parse_location(loc)
+
     return {
         "id": str(hit.get("id", "")),
-        "jp": name_jp,
-        "en": name_en,
-        "pref": pref,
-        "city": city,
+        "jp": str(get_first(f, "name", "")).strip(),
+        "en": str(get_first(f, "en_name", "")).strip(),
+        "pref": str(get_first(f, "address_1", "")).strip(),
+        "city": str(get_first(f, "address_2", "")).strip(),
         "lat": round(lat, 6),
         "lng": round(lng, 6),
     }
@@ -153,7 +137,6 @@ def extract_array(html: str, var_name: str) -> tuple[str, int, int]:
 
 
 def strip_js_comments(text: str) -> str:
-    """// 行コメントと /* ... */ ブロックコメントを除去"""
     out = []
     i = 0
     in_string = False
@@ -307,10 +290,11 @@ def main():
     print(f"   変換後の店舗数: {len(new_stores)}")
     print(f"   有効な店舗数 (名前+座標あり): {len(valid)}")
 
+    if new_stores:
+        print(f"   サンプル: {new_stores[0]}")
+
     if len(valid) < len(new_stores) * 0.9:
         print("⚠️ 有効な店舗が極端に少ないため、HTML 更新を中止します。")
-        if new_stores:
-            print(f"   サンプル変換結果: {new_stores[0]}")
         sys.exit(0)
 
     new_stores = valid
