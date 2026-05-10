@@ -1,0 +1,38 @@
+name: Update Starbucks Stores
+
+# 週1回 (毎週月曜の朝5時 JST = UTC 日曜20時) と、手動実行可
+on:
+  schedule:
+    - cron: "0 20 * * 0"
+  workflow_dispatch: # 手動実行ボタン
+
+permissions:
+  contents: write # 自動コミットのために必要
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ソースコードを取得
+        uses: actions/checkout@v4
+
+      - name: Python セットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 店舗情報更新スクリプトを実行
+        run: python scripts/update_stores.py
+
+      - name: 変更があれば自動コミット
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git add index.html
+            git commit -m "🤖 店舗情報を自動更新 ($(date '+%Y-%m-%d'))"
+            git push
+            echo "✅ 変更をコミットしました"
+          else
+            echo "ℹ️ 変更なし"
+          fi
