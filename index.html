@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link rel="shortcut icon" href="favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="icon-32x32.png">
-<link rel="icon" type="image/png" sizes="64x64" href="icon-64x64.png">
+<link rel="shortcut icon" href="icons/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32x32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="icons/icon-64x64.png">
 <title>全国スタバ訪問</title>
-<link rel="apple-touch-icon" href="icon-192x192.png">
-<link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png">
+<link rel="apple-touch-icon" href="icons/icon-192x192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512x512.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="全国スタバ訪問">
@@ -28,17 +28,18 @@ html,body { height:100%; font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans'
   display:flex; align-items:center; gap:10px;
   box-shadow:0 2px 12px rgba(0,0,0,0.3);
 }
-#header h1 { color:#fff; font-size:16px; font-weight:700; flex:1; }
+#header h1 { color:#fff; font-size:16px; font-weight:700; flex:1; min-width:0; display:flex; align-items:center; margin:0; }
+#header h1 svg { height:44px; width:auto; max-width:100%; display:block; }
 .count-badge { background:var(--green); color:#fff; font-size:11px; font-weight:700; padding:3px 9px; border-radius:20px; white-space:nowrap; }
 #filterbar {
-  position:fixed; top:54px; left:0; right:0; z-index:999;
+  position:fixed; top:66px; left:0; right:0; z-index:999;
   background:rgba(30,57,50,0.97); padding:8px 12px;
   display:flex; gap:6px; overflow-x:auto; scrollbar-width:none;
 }
 #filterbar::-webkit-scrollbar { display:none; }
 .filter-btn { flex-shrink:0; background:rgba(255,255,255,0.12); color:#fff; border:1px solid rgba(255,255,255,0.2); border-radius:20px; padding:5px 12px; font-size:12px; font-weight:600; cursor:pointer; white-space:nowrap; }
 .filter-btn.active { background:var(--green); border-color:var(--green); }
-#map { position:fixed; top:104px; left:0; right:0; bottom:0; }
+#map { position:fixed; top:116px; left:0; right:0; bottom:0; }
 .marker-cluster-small div  { background:rgba(0,112,74,0.85); }
 .marker-cluster-medium div { background:rgba(0,82,46,0.85); }
 .marker-cluster-large div  { background:rgba(30,57,50,0.9); }
@@ -100,21 +101,23 @@ html,body { height:100%; font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans'
 /* ===== タブレット・PC 対応(レスポンシブ) ===== */
 @media (min-width:768px){
   #header h1 { font-size:18px; }
+  #header h1 svg { height:50px; }
   .count-badge { font-size:12px; padding:4px 11px; }
   .filter-btn { padding:6px 14px; font-size:13px; }
 }
 @media (min-width:1024px){
   #header { padding:14px 28px 12px; }
   #header h1 { font-size:20px; }
+  #header h1 svg { height:56px; }
   #filterbar { padding:10px 28px; gap:8px; }
   .filter-btn { padding:7px 16px; font-size:13px; }
-  #map { top:108px; }
+  #map { top:120px; }
 
   /* 店舗詳細: ボトムシート → 右サイドパネル */
   #sheet {
-    top:120px; right:20px; left:auto; bottom:auto;
+    top:132px; right:20px; left:auto; bottom:auto;
     width:360px;
-    max-height:calc(100vh - 140px);
+    max-height:calc(100vh - 152px);
     border-radius:16px;
     transform:translateX(calc(100% + 30px));
     transition:transform 0.3s cubic-bezier(0.34,1.4,0.64,1), opacity 0.3s;
@@ -132,7 +135,7 @@ html,body { height:100%; font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans'
   /* 都道府県ピッカー: 全画面 → 右サイドパネル */
   #pref-picker {
     inset:auto;
-    top:108px; right:0; bottom:0; left:auto;
+    top:120px; right:0; bottom:0; left:auto;
     width:340px;
     transform:translateX(100%);
     box-shadow:-4px 0 24px rgba(0,0,0,0.12);
@@ -214,7 +217,7 @@ html,body { height:100%; font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans'
 @media (min-width:1024px){
   #nearby-picker {
     inset:auto;
-    top:108px; right:0; bottom:0; left:auto;
+    top:120px; right:0; bottom:0; left:auto;
     width:340px;
     transform:translateX(100%);
     box-shadow:-4px 0 24px rgba(0,0,0,0.12);
@@ -451,7 +454,7 @@ html,body { height:100%; font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans'
 @media (min-width:1024px){
   #group-picker {
     inset:auto;
-    top:108px; right:0; bottom:0; left:auto;
+    top:120px; right:0; bottom:0; left:auto;
     width:340px;
     transform:translateX(100%);
     box-shadow:-4px 0 24px rgba(0,0,0,0.12);
@@ -468,7 +471,7 @@ html,body { height:100%; font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans'
 @media (min-width:1024px){
   #news-picker {
     inset:auto;
-    top:108px; right:0; bottom:0; left:auto;
+    top:120px; right:0; bottom:0; left:auto;
     width:340px;
     transform:translateX(100%);
     box-shadow:-4px 0 24px rgba(0,0,0,0.12);
@@ -481,7 +484,7 @@ html,body { height:100%; font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans'
 @media (min-width:1024px){
   #account-picker {
     inset:auto;
-    top:108px; right:0; bottom:0; left:auto;
+    top:120px; right:0; bottom:0; left:auto;
     width:340px;
     transform:translateX(100%);
     box-shadow:-4px 0 24px rgba(0,0,0,0.12);
@@ -495,7 +498,7 @@ html,body { height:100%; font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans'
 </head>
 <body>
 <div id="header">
-  <h1>☕ 全国スタバ訪問</h1>
+  <h1 class="site-title"><svg viewBox="0 0 380 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="starbucks stamp Collection"><rect width="380" height="130" fill="#006241" rx="8"/><rect x="10" y="10" width="360" height="110" rx="4" fill="#fdfbf6"/><rect x="16" y="16" width="348" height="98" rx="2" fill="none" stroke="#006241" stroke-width="0.6"/><image href="icon-192x192.png" x="32" y="30" width="70" height="70"/><text x="240" y="59" font-family="Georgia, 'Times New Roman', serif" font-size="32" fill="#1a1a1a" text-anchor="middle" letter-spacing="0.8">starbucks</text><line x1="170" y1="76" x2="220" y2="76" stroke="#006241" stroke-width="0.5"/><circle cx="240" cy="76" r="1.5" fill="#006241"/><line x1="260" y1="76" x2="310" y2="76" stroke="#006241" stroke-width="0.5"/><text x="240" y="97" font-family="Georgia, 'Times New Roman', serif" font-size="12" fill="#006241" text-anchor="middle" letter-spacing="5" font-style="italic">stamp Collection</text></svg></h1>
   <button class="news-header-btn" id="news-header-btn" aria-label="お知らせ">📢<span class="news-dot" id="news-dot" style="display:none"></span></button>
   <button class="account-header-btn" id="account-header-btn" aria-label="アカウント">🔐</button>
   <button class="group-header-btn" id="group-header-btn" aria-label="グループ">👥</button>
