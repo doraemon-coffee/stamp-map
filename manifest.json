@@ -1,6 +1,6 @@
 {
-  "name": "全国スタバ訪問",
-  "short_name": "スタバ訪問",
+  "name": "スタバマップ",
+  "short_name": "スタバマップ",
   "icons": [
     {
       "src": "icon-192x192.png",
