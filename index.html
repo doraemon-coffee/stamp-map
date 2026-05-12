@@ -177,6 +177,28 @@ html,body { height:100%; font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans'
   100% { transform:scale(1.4); opacity:0; }
 }
 
+/* ===== 現在地ボタン ===== */
+#locate-btn {
+  position:fixed; right:14px; bottom:24px; z-index:600;
+  width:48px; height:48px; border-radius:50%;
+  background:#fff; border:none; cursor:pointer;
+  box-shadow:0 2px 8px rgba(0,0,0,0.25), 0 1px 3px rgba(0,0,0,0.15);
+  display:flex; align-items:center; justify-content:center;
+  color:#5f6368;
+  transition:transform 0.15s, color 0.2s, background 0.2s;
+  -webkit-tap-highlight-color:transparent;
+}
+#locate-btn:active { transform:scale(0.92); }
+#locate-btn.active { color:#1a73e8; }
+#locate-btn.loading { color:#1a73e8; animation:locateSpin 1s linear infinite; }
+@keyframes locateSpin {
+  from { transform:rotate(0deg); }
+  to   { transform:rotate(360deg); }
+}
+@media (min-width:1024px) {
+  #locate-btn { right:24px; bottom:32px; width:52px; height:52px; }
+}
+
 /* ===== 近く順リスト ===== */
 #nearby-picker {
   position:fixed; inset:0; z-index:3000; background:#fff; overflow-y:auto;
@@ -512,6 +534,11 @@ html,body { height:100%; font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans'
   <button class="filter-btn" data-filter="nearby">📍 近く順</button>
 </div>
 <div id="map"></div>
+<button id="locate-btn" aria-label="現在地に移動" title="現在地に移動">
+  <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+    <path fill="currentColor" d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm8.94 3A8.994 8.994 0 0 0 13 3.06V1h-2v2.06A8.994 8.994 0 0 0 3.06 11H1v2h2.06A8.994 8.994 0 0 0 11 20.94V23h2v-2.06A8.994 8.994 0 0 0 20.94 13H23v-2h-2.06zM12 19a7 7 0 1 1 0-14 7 7 0 0 1 0 14z"/>
+  </svg>
+</button>
 <div id="overlay"></div>
 <div id="toast"></div>
 <div id="sheet">
@@ -834,6 +861,37 @@ function openNearbyPicker(){
   }
 }
 window.closeNearbyPicker=function(){document.getElementById('nearby-picker').classList.remove('open');};
+
+// ===== 現在地ボタン =====
+(function(){
+  const btn=document.getElementById('locate-btn');
+  if(!btn)return;
+  function panToUser(){
+    if(userLocation){
+      map.setView([userLocation.lat,userLocation.lng], Math.max(map.getZoom(),14), {animate:true});
+      btn.classList.add('active');
+    }
+  }
+  btn.addEventListener('click',()=>{
+    if(btn.classList.contains('loading'))return;
+    btn.classList.add('loading');
+    if(userLocation){
+      // 取得済み → 即パン後、最新位置を再取得
+      panToUser();
+      navigator.geolocation.getCurrentPosition(
+        pos=>{showUserLocation(pos.coords.latitude,pos.coords.longitude);panToUser();btn.classList.remove('loading');},
+        ()=>{btn.classList.remove('loading');},
+        {enableHighAccuracy:true,timeout:10000,maximumAge:0}
+      );
+    } else {
+      requestLocation(()=>{panToUser();btn.classList.remove('loading');});
+      // タイムアウト時にもloadingが解除されるよう保険
+      setTimeout(()=>btn.classList.remove('loading'),11000);
+    }
+  });
+  // マップを大きく動かしたらアクティブ解除
+  map.on('dragstart',()=>btn.classList.remove('active'));
+})();
 
 // ===== 📢 お知らせ =====
 // 更新時はこの NEWS 配列を Claude に書き換えてもらう
