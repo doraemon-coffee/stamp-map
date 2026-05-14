@@ -65,12 +65,11 @@ html,body { height:100%; font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans'
 #sheet-name { font-size:17px; font-weight:700; color:var(--brown); margin-bottom:3px; }
 #sheet-en   { font-size:13px; color:#6b6b6b; margin-bottom:10px; }
 #sheet-meta { font-size:13px; color:#555; line-height:1.9; margin-bottom:18px; }
-.action-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px; }
-.action-btn { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; padding:14px 8px; background:#f5f5f5; border:none; border-radius:14px; cursor:pointer; font-size:11px; font-weight:700; color:#333; }
+.action-grid { display:grid; grid-template-columns:1fr; gap:10px; margin-bottom:14px; }
+.action-btn { display:flex; flex-direction:row; align-items:center; justify-content:center; gap:8px; padding:14px 8px; background:#f5f5f5; border:none; border-radius:14px; cursor:pointer; font-size:14px; font-weight:700; color:#333; }
 .action-btn:active { opacity:0.7; }
 .action-btn .icon { font-size:22px; line-height:1; }
 .action-btn.maps-btn { background:#E8F5E9; color:#1B5E20; }
-.action-btn.copy-btn { background:#E3F2FD; color:#0D47A1; }
 #toast { position:fixed; bottom:80px; left:50%; transform:translateX(-50%) translateY(20px); background:rgba(30,57,50,0.92); color:#fff; padding:10px 20px; border-radius:20px; font-size:13px; font-weight:600; opacity:0; transition:opacity 0.2s,transform 0.2s; z-index:3000; pointer-events:none; white-space:nowrap; }
 #toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
 #toggle-wrap { display:flex; align-items:center; justify-content:space-between; background:#fff5f5; border-radius:14px; padding:13px 16px; border:1.5px solid #ffd0d3; }
@@ -636,11 +635,9 @@ html,body { height:100%; font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans'
     <div id="sheet-meta"></div>
     <div class="action-grid">
       <button class="action-btn maps-btn" id="maps-btn"><span class="icon">🗺️</span>地図アプリで開く</button>
-      <button class="action-btn copy-btn" id="copy-btn"><span class="icon">📋</span>住所をコピー</button>
     </div>
     <div id="toggle-wrap">
       <div class="toggle-left">
-        <span class="toggle-icon">❤️</span>
         <div>
           <div class="toggle-title">訪問済み</div>
           <div class="toggle-sub">タップして記録</div>
@@ -868,11 +865,6 @@ function openSheet(idx){
       ?'maps://maps.apple.com/?q='+encodeURIComponent(s.jp)+'&ll='+s.lat+','+s.lng
       :'https://maps.google.com/?q='+s.lat+','+s.lng;
     window.open(url,'_blank');
-  };
-  document.getElementById('copy-btn').onclick=()=>{
-    const addr=s.addr||s.pref;
-    if(navigator.clipboard){navigator.clipboard.writeText(addr).then(()=>showToast('住所をコピーしました'));}
-    else{const el=document.createElement('textarea');el.value=addr;el.style.cssText='position:fixed;opacity:0';document.body.appendChild(el);el.select();document.execCommand('copy');document.body.removeChild(el);showToast('住所をコピーしました');}
   };
   document.getElementById('sheet').classList.add('open');
   document.getElementById('overlay').classList.add('show');
