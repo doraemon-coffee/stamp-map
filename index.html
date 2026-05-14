@@ -199,6 +199,59 @@ html,body { height:100%; font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans'
   #locate-btn { right:20px; bottom:108px; width:52px; height:52px; }
 }
 
+/* ===== 訪問済み・スタンプ演出 ===== */
+#stamp-celebrate {
+  position:fixed; inset:0; z-index:9999;
+  pointer-events:none;
+  display:flex; align-items:center; justify-content:center;
+  opacity:0;
+  visibility:hidden;
+}
+#stamp-celebrate.show {
+  visibility:visible;
+  animation: stampOverlayFade 1.0s ease-out forwards;
+}
+.stamp-mark {
+  font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', serif;
+  font-weight:900;
+  color:#E63946;
+  border:8px solid #E63946;
+  border-radius:50%;
+  width:200px; height:200px;
+  font-size:130px;
+  line-height:1;
+  display:flex; align-items:center; justify-content:center;
+  background:rgba(255,255,255,0.05);
+  text-shadow:0 4px 12px rgba(230,57,70,0.3);
+  box-shadow:0 8px 32px rgba(0,0,0,0.2);
+  transform: scale(2.8) rotate(-30deg);
+  opacity:0;
+}
+#stamp-celebrate.show .stamp-mark {
+  animation: stampPress 1.0s cubic-bezier(0.34, 1.56, 0.5, 1) forwards;
+}
+@keyframes stampOverlayFade {
+  0%   { opacity:1; }
+  85%  { opacity:1; }
+  100% { opacity:0; }
+}
+@keyframes stampPress {
+  0%   { transform:scale(2.8) rotate(-30deg); opacity:0; }
+  18%  { transform:scale(1.2) rotate(-8deg); opacity:1; }
+  26%  { transform:scale(0.95) rotate(-8deg); }
+  34%  { transform:scale(1.04) rotate(-8deg); }
+  42%  { transform:scale(1) rotate(-8deg); }
+  85%  { transform:scale(1) rotate(-8deg); opacity:1; }
+  100% { transform:scale(1.05) rotate(-8deg); opacity:0; }
+}
+@media (min-width:1024px) {
+  .stamp-mark { width:260px; height:260px; font-size:170px; border-width:10px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  #stamp-celebrate.show { animation:stampOverlayFade 0.5s ease-out forwards; }
+  #stamp-celebrate.show .stamp-mark { animation:none; transform:scale(1) rotate(-8deg); opacity:1; }
+}
+
 /* ===== 近く順リスト ===== */
 #nearby-picker {
   position:fixed; inset:0; z-index:3000; background:#fff; overflow-y:auto;
@@ -524,6 +577,7 @@ html,body { height:100%; font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans'
 </button>
 <div id="overlay"></div>
 <div id="toast"></div>
+<div id="stamp-celebrate" aria-hidden="true"><div class="stamp-mark">済</div></div>
 <div id="sheet">
   <div id="sheet-handle"></div>
   <div id="sheet-content">
@@ -777,11 +831,22 @@ function closeSheet(){document.getElementById('sheet').classList.remove('open');
 document.getElementById('overlay').addEventListener('click',closeSheet);
 document.getElementById('visited-toggle').addEventListener('change',function(){
   if(currentIdx===null)return;
+  const wasVisited=!!visited[currentIdx];
   if(this.checked)visited[currentIdx]=true;else delete visited[currentIdx];
   save();markers[currentIdx].setIcon(makeIcon(this.checked));
   document.getElementById('stat-visited').textContent=Object.values(visited).filter(Boolean).length;
+  if(this.checked && !wasVisited){playStampCelebrate();}
   if(currentFilter==='visited'||currentFilter==='unvisited'){applyFilter();closeSheet();}
 });
+function playStampCelebrate(){
+  const el=document.getElementById('stamp-celebrate');
+  if(!el)return;
+  el.classList.remove('show');
+  void el.offsetWidth; // reflow to restart animation
+  el.classList.add('show');
+  if(navigator.vibrate)try{navigator.vibrate(60);}catch(e){}
+  setTimeout(()=>el.classList.remove('show'),1100);
+}
 applyFilter();
 
 // ===== 現在地・近く順リスト =====
