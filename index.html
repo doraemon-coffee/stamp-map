@@ -209,47 +209,91 @@ html,body { height:100%; font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans'
 }
 #stamp-celebrate.show {
   visibility:visible;
-  animation: stampOverlayFade 1.0s ease-out forwards;
+  animation: stampOverlayFade 1.5s ease-out forwards;
+}
+.celebrate-stage {
+  position:relative;
+  width:240px; height:240px;
+}
+.celebrate-icon {
+  width:100%; height:100%; display:block;
+  filter: drop-shadow(0 12px 32px rgba(0,0,0,0.25));
+  transform: scale(0.7);
+  opacity:0;
+}
+#stamp-celebrate.show .celebrate-icon {
+  animation: celebrateIconIn 1.5s ease-out forwards;
+}
+@keyframes celebrateIconIn {
+  0%   { transform:scale(0.7); opacity:0; }
+  12%  { transform:scale(1.08); opacity:1; }
+  22%  { transform:scale(1); }
+  85%  { transform:scale(1); opacity:1; }
+  100% { transform:scale(0.95); opacity:0; }
+}
+/* 済の位置は icon 内で center 70%/70%、直径 39% */
+.celebrate-mask {
+  position:absolute;
+  width:39%; height:39%;
+  top:70%; left:70%;
+  transform:translate(-50%, -50%);
+  background:#fff;
+  border-radius:50%;
+  opacity:0;
+}
+#stamp-celebrate.show .celebrate-mask {
+  animation: celebrateMaskShow 1.5s ease-out forwards;
+}
+@keyframes celebrateMaskShow {
+  0%, 11%   { opacity:0; }
+  14%, 85%  { opacity:1; }
+  100%      { opacity:0; }
 }
 .stamp-mark {
+  position:absolute;
+  top:70%; left:70%;
+  width:39%; height:39%;
   font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', serif;
   font-weight:900;
   color:#E63946;
-  border:8px solid #E63946;
+  border:5px solid #E63946;
   border-radius:50%;
-  width:200px; height:200px;
-  font-size:130px;
+  font-size:62px;
   line-height:1;
   display:flex; align-items:center; justify-content:center;
-  background:rgba(255,255,255,0.05);
-  text-shadow:0 4px 12px rgba(230,57,70,0.3);
-  box-shadow:0 8px 32px rgba(0,0,0,0.2);
-  transform: scale(2.8) rotate(-30deg);
+  background:#fff;
+  box-shadow:0 4px 14px rgba(230,57,70,0.35);
   opacity:0;
+  transform: translate(-50%, -50%) scale(3.2) rotate(-30deg);
 }
 #stamp-celebrate.show .stamp-mark {
-  animation: stampPress 1.0s cubic-bezier(0.34, 1.56, 0.5, 1) forwards;
+  animation: stampPress 1.5s cubic-bezier(0.34, 1.45, 0.5, 1) forwards;
 }
 @keyframes stampOverlayFade {
   0%   { opacity:1; }
-  85%  { opacity:1; }
+  88%  { opacity:1; }
   100% { opacity:0; }
 }
 @keyframes stampPress {
-  0%   { transform:scale(2.8) rotate(-30deg); opacity:0; }
-  18%  { transform:scale(1.2) rotate(-8deg); opacity:1; }
-  26%  { transform:scale(0.95) rotate(-8deg); }
-  34%  { transform:scale(1.04) rotate(-8deg); }
-  42%  { transform:scale(1) rotate(-8deg); }
-  85%  { transform:scale(1) rotate(-8deg); opacity:1; }
-  100% { transform:scale(1.05) rotate(-8deg); opacity:0; }
+  0%, 25%  { transform:translate(-50%, -50%) scale(3.2) rotate(-30deg); opacity:0; }
+  40%      { transform:translate(-50%, -50%) scale(1.18) rotate(-10deg); opacity:1; }
+  47%      { transform:translate(-50%, -50%) scale(0.92) rotate(-10deg); }
+  54%      { transform:translate(-50%, -50%) scale(1.05) rotate(-10deg); }
+  62%      { transform:translate(-50%, -50%) scale(1) rotate(-10deg); }
+  85%      { transform:translate(-50%, -50%) scale(1) rotate(-10deg); opacity:1; }
+  100%     { transform:translate(-50%, -50%) scale(1.04) rotate(-10deg); opacity:0; }
 }
 @media (min-width:1024px) {
-  .stamp-mark { width:260px; height:260px; font-size:170px; border-width:10px; }
+  .celebrate-stage { width:300px; height:300px; }
+  .stamp-mark { font-size:78px; border-width:6px; }
 }
 @media (prefers-reduced-motion:reduce) {
-  #stamp-celebrate.show { animation:stampOverlayFade 0.5s ease-out forwards; }
-  #stamp-celebrate.show .stamp-mark { animation:none; transform:scale(1) rotate(-8deg); opacity:1; }
+  #stamp-celebrate.show .celebrate-icon,
+  #stamp-celebrate.show .celebrate-mask,
+  #stamp-celebrate.show .stamp-mark { animation:none; opacity:1; }
+  #stamp-celebrate.show .celebrate-icon { transform:scale(1); }
+  #stamp-celebrate.show .stamp-mark { transform:translate(-50%,-50%) scale(1) rotate(-10deg); }
+  #stamp-celebrate.show { animation:stampOverlayFade 0.6s ease-out forwards; }
 }
 
 /* ===== 近く順リスト ===== */
@@ -577,7 +621,13 @@ html,body { height:100%; font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans'
 </button>
 <div id="overlay"></div>
 <div id="toast"></div>
-<div id="stamp-celebrate" aria-hidden="true"><div class="stamp-mark">済</div></div>
+<div id="stamp-celebrate" aria-hidden="true">
+  <div class="celebrate-stage">
+    <img src="icon-192x192.png" class="celebrate-icon" alt="">
+    <div class="celebrate-mask"></div>
+    <div class="stamp-mark">済</div>
+  </div>
+</div>
 <div id="sheet">
   <div id="sheet-handle"></div>
   <div id="sheet-content">
@@ -845,7 +895,7 @@ function playStampCelebrate(){
   void el.offsetWidth; // reflow to restart animation
   el.classList.add('show');
   if(navigator.vibrate)try{navigator.vibrate(60);}catch(e){}
-  setTimeout(()=>el.classList.remove('show'),1100);
+  setTimeout(()=>el.classList.remove('show'),1600);
 }
 applyFilter();
 
