@@ -29,7 +29,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if [[ -n "$(git status --porcelain)" ]]; then
-            git add index.html
+            git add index.html stores.json news.json
             git commit -m "🤖 店舗情報を自動更新 ($(date '+%Y-%m-%d'))"
             git push
             echo "✅ 変更をコミットしました"
