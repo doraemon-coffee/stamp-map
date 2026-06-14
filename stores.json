@@ -458,7 +458,7 @@
 {"n": "Otemachi Bldg.", "jp": "大手町ビル店", "pref": "東京都", "lat": 35.683176, "lng": 139.768133, "hours": "07:00～22:00", "type": 1, "addr": "東京都 千代田区 大手町1-6-1 大手町ビル"},
 {"n": "Otemachi PLACE", "jp": "大手町プレイス店", "pref": "東京都", "lat": 35.683741, "lng": 139.770266, "hours": "07:00～21:00", "type": 5, "addr": "東京都 千代田区 大手町2-3-1 大手町プレイス"},
 {"n": "Marunouchi Mitsubishi Bldg.", "jp": "丸の内三菱ビル店", "pref": "東京都", "lat": 35.67655, "lng": 139.766781, "hours": "07:00～21:00", "type": 1, "addr": "東京都 千代田区 丸の内2-5-2 三菱ビル"},
-{"n": "Marunouchi Shin Tokyo Bldg.", "jp": "丸の内新東京ビル店", "pref": "東京都", "lat": 35.674233, "lng": 139.765853, "hours": "07:00～22:00", "type": 1, "addr": "東京都 千代田区 丸の内3-3-1 丸の内新東京ビル"},
+{"n": "Marunouchi Shin Tokyo Bldg.", "jp": "丸の内新東京ビル店", "pref": "東京都", "lat": 35.674233, "lng": 139.765853, "hours": "", "type": 1, "addr": "東京都 千代田区 丸の内3-3-1 丸の内新東京ビル"},
 {"n": "JR Tokyo Eki Nihonbashiguchi", "jp": "ＪＲ東京駅日本橋口店", "pref": "東京都", "lat": 35.680078, "lng": 139.772258, "hours": "07:00～22:30", "type": 1, "addr": "東京都 千代田区 丸の内1-9-1 丸の内中央ビル"},
 {"n": "Tokyo Station City Sapia Tower", "jp": "東京ステーションシティ サピアタワー店", "pref": "東京都", "lat": 35.680485, "lng": 139.771791, "hours": "07:00～21:00", "type": 5, "addr": "東京都 千代田区 丸の内1-7-12"},
 {"n": "GRANSTA MARUNOUCHI", "jp": "グランスタ丸の内店", "pref": "東京都", "lat": 35.678745, "lng": 139.769524, "hours": "06:30～22:30", "type": 1, "addr": "東京都 千代田区 丸の内1-9-1 JR東日本東京駅構内地下1階改札外"},
@@ -693,7 +693,6 @@
 {"n": "Yebisu Garden Place Tower 1F", "jp": "恵比寿ガーデンプレイスタワー１F店", "pref": "東京都", "lat": 35.639245, "lng": 139.716598, "hours": "07:00～22:00", "type": 1, "addr": "東京都 渋谷区 恵比寿4-20-3 恵比寿ガーデンプレイスタワー"},
 {"n": "TSUTAYA BOOKSTORE SHIBUYA SCRAMBLE SQUARE", "jp": "TSUTAYA BOOKSTORE 渋谷スクランブルスクエア店", "pref": "東京都", "lat": 35.655149, "lng": 139.705308, "hours": "10:00～23:00", "type": 1, "addr": "東京都 渋谷区 渋谷2-24-12 渋谷スクランブルスクエア"},
 {"n": "Shibuya PARCO", "jp": "渋谷パルコ店", "pref": "東京都", "lat": 35.658786, "lng": 139.702012, "hours": "08:00～22:30", "type": 1, "addr": "東京都 渋谷区 宇田川町15-1 渋谷パルコ5階"},
-{"n": "Shibuya Hikarie SinQs", "jp": "渋谷ヒカリエ ShinQs店", "pref": "東京都", "lat": 35.655764, "lng": 139.706787, "hours": "07:30～21:00", "type": 1, "addr": "東京都 渋谷区 渋谷2-21-1 渋谷ヒカリエ ShinQs B1F"},
 {"n": "Kitasando", "jp": "北参道店", "pref": "東京都", "lat": 35.674867, "lng": 139.709111, "hours": "07:00～21:00", "type": 1, "addr": "東京都 渋谷区 千駄ケ谷3-38-9 IBF-PLANNING ビル"},
 {"n": "Link Square Shinjuku", "jp": "リンクスクエア新宿店", "pref": "東京都", "lat": 35.683092, "lng": 139.70626, "hours": "07:00～21:00", "type": 1, "addr": "東京都 渋谷区 千駄ヶ谷5-27-5 リンクスクエア新宿"},
 {"n": "Shinjuku Southern Terrace", "jp": "新宿サザンテラス店", "pref": "東京都", "lat": 35.684674, "lng": 139.703489, "hours": "07:00～22:30", "type": 1, "addr": "東京都 渋谷区 代々木2-2-1 新宿サザンテラス内"},
@@ -1556,7 +1555,6 @@
 {"n": "JR Momodani Eki", "jp": "JR桃谷駅店", "pref": "大阪府", "lat": 34.655301, "lng": 135.53081, "hours": "07:00～22:00", "type": 7, "addr": "大阪府 大阪市天王寺区 堂ケ芝1-8-27"},
 {"n": "Tennoji MIO Honkan 8F", "jp": "天王寺ミオ 本館8階店", "pref": "大阪府", "lat": 34.643533, "lng": 135.517311, "hours": "10:30～20:30", "type": 1, "addr": "大阪府 大阪市天王寺区 悲田院町10-39 天王寺ミオ本館"},
 {"n": "Tennoji MIO Plaza 4F", "jp": "天王寺ミオ プラザ館4階店", "pref": "大阪府", "lat": 34.644468, "lng": 135.516634, "hours": "10:00～23:00", "type": 1, "addr": "大阪府 大阪市天王寺区 悲田院町10-48 天王寺ミオ プラザ館"},
-{"n": "Tennoji MIO Honkan 3F", "jp": "天王寺ミオ 本館3階店", "pref": "大阪府", "lat": 34.643552, "lng": 135.51699, "hours": "", "type": 1, "addr": "大阪府 大阪市天王寺区 悲田院町10-39 天王寺ミオ本館"},
 {"n": "JR Tennoji Eki Higashi Kaisatsunai", "jp": "JR天王寺駅 東改札内店", "pref": "大阪府", "lat": 34.643362, "lng": 135.518129, "hours": "07:00～22:00", "type": 1, "addr": "大阪府 大阪市天王寺区 悲田院町10-45 JR天王寺駅東改札内"},
 {"n": "Tennoji MIO Plaza 1F", "jp": "天王寺ミオ プラザ館1階店", "pref": "大阪府", "lat": 34.643737, "lng": 135.516814, "hours": "07:00～22:00", "type": 1, "addr": "大阪府 大阪市天王寺区 悲田院町10-48 天王寺ミオ プラザ館1階"},
 {"n": "Abeno Hoop", "jp": "あべのHoop店", "pref": "大阪府", "lat": 34.642069, "lng": 135.516306, "hours": "07:00～23:00", "type": 1, "addr": "大阪府 大阪市阿倍野区 阿倍野筋1-2-30 あべのHoop"},
@@ -2123,5 +2121,9 @@
 {"n": "AEON MALL Aratamabashi", "jp": "イオンモール新瑞橋店", "pref": "愛知県", "lat": 35.11113, "lng": 136.937536, "hours": "10:00～21:00", "type": 1, "addr": "愛知県 名古屋市南区 菊住1-7-10 イオンモール新瑞橋1階"},
 {"n": "Across PLAZA Iizuka Taromaru", "jp": "アクロスプラザ飯塚太郎丸店", "pref": "福岡県", "lat": 33.60563, "lng": 130.673365, "hours": "08:00～22:00", "type": 3, "addr": "福岡県 飯塚市 太郎丸908-1 アクロスプラザ飯塚太郎丸"},
 {"n": "Hanamaki", "jp": "花巻店", "pref": "岩手県", "lat": 39.399501, "lng": 141.104188, "hours": "08:00～22:00", "type": 3, "addr": "岩手県 花巻市 南新田330-1"},
-{"n": "Kurobe", "jp": "黒部店", "pref": "富山県", "lat": 36.87434, "lng": 137.430113, "hours": "08:00～21:00", "type": 3, "addr": "富山県 黒部市 堀切916-6"}
+{"n": "Kurobe", "jp": "黒部店", "pref": "富山県", "lat": 36.87434, "lng": 137.430113, "hours": "08:00～21:00", "type": 3, "addr": "富山県 黒部市 堀切916-6"},
+{"n": "Shibuya Hikarie Nai SinQs", "jp": "渋谷ヒカリエ内ShinQs店", "pref": "東京都", "lat": 35.655764, "lng": 139.706787, "hours": "07:30～21:00", "type": 1, "addr": "東京都 渋谷区 渋谷2-21-1 渋谷ヒカリエ内ShinQs　B1F"},
+{"n": "STARBUCKS Tea & Cafe Tennoji MIO Honkan 3F", "jp": "スターバックス ティー＆カフェ 天王寺ミオ本館3階店", "pref": "大阪府", "lat": 34.643552, "lng": 135.51699, "hours": "", "type": 1, "addr": "大阪府 大阪市天王寺区 悲田院町10-39 天王寺ミオ本館"},
+{"n": "STARBUCKS RESERVE(R) Cafe Nagoya Sakae HAERA", "jp": "スターバックス リザーブ(R) カフェ 名古屋 栄 HAERA店", "pref": "愛知県", "lat": 35.166017, "lng": 136.910495, "hours": "07:00～22:00", "type": 1, "addr": "愛知県 名古屋市中区 錦3-25-1 HAERA B2F"},
+{"n": "Nishitetsu Kasugabaru Eki", "jp": "西鉄春日原駅店", "pref": "福岡県", "lat": 33.534265, "lng": 130.475825, "hours": "07:00～22:00", "type": 1, "addr": "福岡県 春日市 春日原北町90-1 レイリア春日原1階"}
 ]
