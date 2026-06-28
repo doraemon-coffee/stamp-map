@@ -921,7 +921,7 @@
 {"n": "NISSAN GLOBAL HEADQUARTERS GALLERY", "jp": "日産グローバル本社ギャラリー店", "pref": "神奈川県", "lat": 35.460763, "lng": 139.629948, "hours": "08:00～20:00", "type": 2, "addr": "神奈川県 横浜市西区 高島1-1-1 NISSAN GLOBAL HEADQUARTERS GALLERY"},
 {"n": "YOKOHAMA BAY QUARTER", "jp": "横浜ベイクォーター店", "pref": "神奈川県", "lat": 35.463628, "lng": 139.629699, "hours": "07:00～22:30", "type": 1, "addr": "神奈川県 横浜市神奈川区 金港町1-10 横浜ベイクォーター 3階"},
 {"n": "TRESSA YOKOKHAMA", "jp": "トレッサ横浜店", "pref": "神奈川県", "lat": 35.522571, "lng": 139.648953, "hours": "10:00～20:00", "type": 1, "addr": "神奈川県 横浜市港北区 師岡町700 トレッサ横浜 北棟2階"},
-{"n": "JR Shinyokohama Eki Shinkansen Kudari Platform Car Number 11", "jp": "JR新横浜駅 新幹線下りホーム11号店", "pref": "神奈川県", "lat": 35.504884, "lng": 139.621929, "hours": "", "type": 2, "addr": "神奈川県 横浜市港北区 篠原町2937 JR新横浜駅 新幹線下りホーム"},
+{"n": "JR Shinyokohama Eki Shinkansen Kudari Platform Car Number 11", "jp": "JR新横浜駅 新幹線下りホーム11号店", "pref": "神奈川県", "lat": 35.504884, "lng": 139.621929, "hours": "06:30～21:30", "type": 2, "addr": "神奈川県 横浜市港北区 篠原町2937 JR新横浜駅 新幹線下りホーム"},
 {"n": "Okurayama Eki-mae", "jp": "大倉山駅前店", "pref": "神奈川県", "lat": 35.518374, "lng": 139.633428, "hours": "07:00～22:00", "type": 1, "addr": "神奈川県 横浜市港北区 大倉山1-2-10"},
 {"n": "Shin-yokohama", "jp": "新横浜店", "pref": "神奈川県", "lat": 35.505417, "lng": 139.618304, "hours": "07:00～22:00", "type": 1, "addr": "神奈川県 横浜市港北区 新横浜2-5-1 日総第１３ビル 1F"},
 {"n": "Shin-yokohama 3-chome", "jp": "新横浜３丁目店", "pref": "神奈川県", "lat": 35.507499, "lng": 139.620734, "hours": "07:00～22:00", "type": 1, "addr": "神奈川県 横浜市港北区 新横浜3-17-2 友泉新横浜ビル"},
@@ -1349,7 +1349,6 @@
 {"n": "Chita Shinanogawa", "jp": "知多信濃川店", "pref": "愛知県", "lat": 34.991222, "lng": 136.880978, "hours": "08:00～22:00", "type": 3, "addr": "愛知県 知多市 八幡竹後20"},
 {"n": "Chubu Int l Airport Centrair", "jp": "中部国際空港セントレア店", "pref": "愛知県", "lat": 34.856043, "lng": 136.818364, "hours": "07:00～22:00", "type": 1, "addr": "愛知県 常滑市 セントレア1-1 中部国際空港セントレア(4F)"},
 {"n": "Chubu Int l Airport Dept. Terminal", "jp": "中部国際空港出発ターミナル内店", "pref": "愛知県", "lat": 34.855402, "lng": 136.814593, "hours": "07:00～22:00", "type": 1, "addr": "愛知県 常滑市 セントレア1-1 中部国際空港セントレア(3F)"},
-{"n": "Chubu Int l Airport Centrair Bldg. 2", "jp": "中部国際空港第２セントレアビル店", "pref": "愛知県", "lat": 34.857222, "lng": 136.817778, "hours": "07:00～18:30", "type": 2, "addr": "愛知県 常滑市 セントレア1-1 第2セントレアビル"},
 {"n": "Chubu Int l Airport Centrair FLIGHT OF DREAMS", "jp": "中部国際空港セントレアFLIGHT OF DREAMS店", "pref": "愛知県", "lat": 34.852031, "lng": 136.820616, "hours": "07:00～21:00", "type": 1, "addr": "愛知県 常滑市 セントレア1-1 FLIGHT OF DREAMS"},
 {"n": "AEON MALL Tokoname", "jp": "イオンモール常滑店", "pref": "愛知県", "lat": 34.879418, "lng": 136.828889, "hours": "10:00～21:00", "type": 1, "addr": "愛知県 常滑市 りんくう町2-20-3 イオンモール常滑"},
 {"n": "AEON MALL Fuso", "jp": "イオンモール扶桑店", "pref": "愛知県", "lat": 35.359035, "lng": 136.901751, "hours": "10:00～21:00", "type": 1, "addr": "愛知県 丹羽郡 扶桑町南山名高塚5-1 イオンモール扶桑"},
@@ -2072,7 +2071,7 @@
 {"n": "Kagoshima OPSIA Misumi", "jp": "鹿児島OPSIAミスミ店", "pref": "鹿児島県", "lat": 31.540066, "lng": 130.546021, "hours": "10:00～23:00", "type": 1, "addr": "鹿児島県 鹿児島市 宇宿2-3-5 OPSIA Misumi"},
 {"n": "AEON MALL KAGOSHIMA BAY", "jp": "イオンモールKAGOSHIMA BAY店", "pref": "鹿児島県", "lat": 31.523938, "lng": 130.538423, "hours": "10:00～21:00", "type": 1, "addr": "鹿児島県 鹿児島市 東開町7 イオンモールKAGOSHIMA BAY"},
 {"n": "Kagoshima Tokaicho", "jp": "鹿児島東開町店", "pref": "鹿児島県", "lat": 31.532565, "lng": 130.536999, "hours": "08:00～22:00", "type": 3, "addr": "鹿児島県 鹿児島市 東開町4-113"},
-{"n": "Kagoshima Taniyama Eki-mae", "jp": "鹿児島谷山駅前店", "pref": "鹿児島県", "lat": 31.522844, "lng": 130.520442, "hours": "08:00～22:00", "type": 3, "addr": "鹿児島県 鹿児島市 谷山中央1-4127-17"},
+{"n": "Kagoshima Taniyama Eki-mae", "jp": "鹿児島谷山駅前店", "pref": "鹿児島県", "lat": 31.522844, "lng": 130.520442, "hours": "07:00～22:00", "type": 3, "addr": "鹿児島県 鹿児島市 谷山中央1-4127-17"},
 {"n": "Kagoshima Maruya gardens", "jp": "鹿児島マルヤガーデンズ店", "pref": "鹿児島県", "lat": 31.587674, "lng": 130.559287, "hours": "07:00～22:00", "type": 1, "addr": "鹿児島県 鹿児島市 呉服町6-5 マルヤガーデンズ"},
 {"n": "Kagoshima Tenmonkan", "jp": "鹿児島天文館店", "pref": "鹿児島県", "lat": 31.588516, "lng": 130.557016, "hours": "08:00～21:00", "type": 1, "addr": "鹿児島県 鹿児島市 東千石町16-18 STYLISHビル"},
 {"n": "Kagoshima Senganen", "jp": "鹿児島仙巌園店", "pref": "鹿児島県", "lat": 31.613325, "lng": 130.577623, "hours": "08:00～21:00", "type": 1, "addr": "鹿児島県 鹿児島市 吉野町9688-1"},
@@ -2125,5 +2124,6 @@
 {"n": "Shibuya Hikarie Nai SinQs", "jp": "渋谷ヒカリエ内ShinQs店", "pref": "東京都", "lat": 35.655764, "lng": 139.706787, "hours": "07:30～21:00", "type": 1, "addr": "東京都 渋谷区 渋谷2-21-1 渋谷ヒカリエ内ShinQs　B1F"},
 {"n": "STARBUCKS Tea & Cafe Tennoji MIO Honkan 3F", "jp": "スターバックス ティー＆カフェ 天王寺ミオ本館3階店", "pref": "大阪府", "lat": 34.643552, "lng": 135.51699, "hours": "", "type": 1, "addr": "大阪府 大阪市天王寺区 悲田院町10-39 天王寺ミオ本館"},
 {"n": "STARBUCKS RESERVE(R) Cafe Nagoya Sakae HAERA", "jp": "スターバックス リザーブ(R) カフェ 名古屋 栄 HAERA店", "pref": "愛知県", "lat": 35.166017, "lng": 136.910495, "hours": "07:00～22:00", "type": 1, "addr": "愛知県 名古屋市中区 錦3-25-1 HAERA B2F"},
-{"n": "Nishitetsu Kasugabaru Eki", "jp": "西鉄春日原駅店", "pref": "福岡県", "lat": 33.534265, "lng": 130.475825, "hours": "07:00～22:00", "type": 1, "addr": "福岡県 春日市 春日原北町90-1 レイリア春日原1階"}
+{"n": "Nishitetsu Kasugabaru Eki", "jp": "西鉄春日原駅店", "pref": "福岡県", "lat": 33.534265, "lng": 130.475825, "hours": "07:00～22:00", "type": 1, "addr": "福岡県 春日市 春日原北町90-1 レイリア春日原1階"},
+{"n": "Hitachiota", "jp": "常陸太田店", "pref": "茨城県", "lat": 36.544262, "lng": 140.535538, "hours": "07:00～22:00", "type": 3, "addr": "茨城県 常陸太田市 東部土地区画整理事業3-1街区21画地"}
 ]
