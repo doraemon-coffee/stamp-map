@@ -603,7 +603,7 @@ html,body { height:100%; font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans'
   <button class="header-btn news-header-btn" id="news-header-btn" aria-label="お知らせ"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="news-dot" id="news-dot" style="display:none"></span></button>
   <button class="header-btn account-header-btn" id="account-header-btn" aria-label="アカウント"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></button>
   <button class="header-btn group-header-btn" id="group-header-btn" aria-label="グループ"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.2"/><path d="M3 19c0-3 3-4.5 6-4.5s6 1.5 6 4.5"/><path d="M15 19c0-2.2 2-3.5 4-3.5s2 .5 2 .5"/></svg></button>
-  <span class="count-badge" id="count-badge">2,127店舗</span>
+  <span class="count-badge" id="count-badge">2,119店舗</span>
 </div>
 <div id="filterbar">
   <button class="filter-btn active" data-filter="all">すべて</button>
@@ -790,12 +790,24 @@ const map=L.map('map',{
   maxBoundsViscosity: 1.0,
   minZoom: 5
 }).setView([36.5,137.5],5);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OSM',maxZoom:18}).addTo(map);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{
+  attribution:'© OSM © CARTO',
+  subdomains:'abcd',
+  maxZoom:20
+}).addTo(map);
 L.control.zoom({position:'topright'}).addTo(map);
 
 const clusterN=L.markerClusterGroup({chunkedLoading:true,chunkInterval:50,chunkDelay:50});
 const clusterV=L.markerClusterGroup({chunkedLoading:true,iconCreateFunction:function(c){return L.divIcon({html:'<div><span>'+c.getChildCount()+'</span></div>',className:'marker-cluster marker-cluster-small cluster-visited',iconSize:L.point(40,40)});}});
-const markers=STORES.map((s,i)=>{const m=L.marker([s.lat,s.lng],{icon:makeIcon(!!visited[i])});m.on('click',()=>openSheet(i));return m;});
+// 位置補正: スタバAPIのlat/lngは南東にずれているため、北西方向にシフト
+// 実測: 南東方向に約400m → 北西方向に補正
+// 緯度1度 ≈ 111km、経度1度 ≈ 91km (日本の緯度)
+// 補正値: 緯度+約0.0027 (北へ約300m)、経度-約0.0031 (西へ約280m)
+const LAT_OFFSET = 0.00272;
+const LNG_OFFSET = -0.00310;
+function fixCoord(s){ return [s.lat + LAT_OFFSET, s.lng + LNG_OFFSET]; }
+
+const markers=STORES.map((s,i)=>{const m=L.marker(fixCoord(s),{icon:makeIcon(!!visited[i])});m.on('click',()=>openSheet(i));return m;});
 let currentFilter='all',selectedPref=null;
 function applyFilter(){
   map.removeLayer(clusterN);map.removeLayer(clusterV);
@@ -844,7 +856,7 @@ function openPrefPicker(){
         document.querySelector('[data-filter="pref"]').textContent=p+'▾';
         closePrefPicker();
         const fs=STORES.filter(s=>s.pref===p);
-        map.fitBounds([[Math.min(...fs.map(s=>s.lat)),Math.min(...fs.map(s=>s.lng))],[Math.max(...fs.map(s=>s.lat)),Math.max(...fs.map(s=>s.lng))]],{padding:[50,50]});
+        map.fitBounds([[Math.min(...fs.map(s=>s.lat))+LAT_OFFSET,Math.min(...fs.map(s=>s.lng))+LNG_OFFSET],[Math.max(...fs.map(s=>s.lat))+LAT_OFFSET,Math.max(...fs.map(s=>s.lng))+LNG_OFFSET]],{padding:[50,50]});
         applyFilter();
       };
       list.appendChild(row);
@@ -863,9 +875,10 @@ function openSheet(idx){
   document.getElementById('visited-toggle').checked=!!visited[idx];
   document.getElementById('maps-btn').onclick=()=>{
     const ua=navigator.userAgent;
+    const [fLat,fLng]=fixCoord(s);
     const url=/iPad|iPhone|iPod/.test(ua)
-      ?'maps://maps.apple.com/?q='+encodeURIComponent(s.jp)+'&ll='+s.lat+','+s.lng
-      :'https://maps.google.com/?q='+s.lat+','+s.lng;
+      ?'maps://maps.apple.com/?q='+encodeURIComponent(s.jp)+'&ll='+fLat+','+fLng
+      :'https://maps.google.com/?q='+fLat+','+fLng;
     window.open(url,'_blank');
   };
   document.getElementById('sheet').classList.add('open');
@@ -938,7 +951,7 @@ function buildNearbyList(){
     row.innerHTML='<div class="nearby-info"><div class="nearby-name-jp">'+(visited[i]?'❤️ ':'')+s.jp+'</div><div class="nearby-name-pref">'+s.pref+'</div></div><span class="nearby-dist">'+distStr+'</span>';
     row.onclick=()=>{
       closeNearbyPicker();
-      map.setView([s.lat,s.lng],15);
+      map.setView(fixCoord(s),15);
       setTimeout(()=>openSheet(i),280);
     };
     list.appendChild(row);
@@ -1011,7 +1024,7 @@ function buildNewsList(){
         const s=STORES[n.storeIdx];
         if(!s)return;
         closeNewsPicker();
-        map.setView([s.lat,s.lng],15);
+        map.setView(fixCoord(s),15);
         setTimeout(()=>openSheet(n.storeIdx),280);
       };
     } else {
