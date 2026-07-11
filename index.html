@@ -803,8 +803,8 @@ const clusterV=L.markerClusterGroup({chunkedLoading:true,iconCreateFunction:func
 // 実測: 南東方向に約400m → 北西方向に補正
 // 緯度1度 ≈ 111km、経度1度 ≈ 91km (日本の緯度)
 // 補正値: 緯度+約0.0027 (北へ約300m)、経度-約0.0031 (西へ約280m)
-const LAT_OFFSET = 0.00310;
-const LNG_OFFSET = -0.00355;
+const LAT_OFFSET = 0.00345;
+const LNG_OFFSET = -0.00320;
 function fixCoord(s){ return [s.lat + LAT_OFFSET, s.lng + LNG_OFFSET]; }
 
 const markers=STORES.map((s,i)=>{const m=L.marker(fixCoord(s),{icon:makeIcon(!!visited[i])});m.on('click',()=>openSheet(i));return m;});
