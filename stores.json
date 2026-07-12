@@ -712,7 +712,7 @@
 {"n": "Nakameguro TSUTAYA BOOKS", "jp": "中目黒 蔦屋書店", "pref": "東京都", "lat": 35.641241, "lng": 139.702438, "hours": "07:00～22:00", "type": 1, "addr": "東京都 目黒区 上目黒1-22-10"},
 {"n": "etomo Yutenji", "jp": "エトモ祐天寺店", "pref": "東京都", "lat": 35.634458, "lng": 139.694402, "hours": "07:00～22:30", "type": 1, "addr": "東京都 目黒区 祐天寺2-13-4 エトモ祐天寺"},
 {"n": "Ikejiri 2-chome", "jp": "池尻2丁目店", "pref": "東京都", "lat": 35.645919, "lng": 139.686611, "hours": "07:30～22:30", "type": 8, "addr": "東京都 世田谷区 池尻2-27-7 アリビエ池尻"},
-{"n": "Sangenjaya", "jp": "三軒茶屋店", "pref": "東京都", "lat": 35.641194, "lng": 139.672883, "hours": "07:00～22:30", "type": 1, "addr": "東京都 世田谷区 太子堂4-20-25 三軒茶屋アバックビル"},
+{"n": "Sangenjaya", "jp": "三軒茶屋店", "pref": "東京都", "lat": 35.641194, "lng": 139.672883, "hours": "07:00～22:30", "type": 1, "addr": "東京都 世田谷区 太子堂4-20-25 三軒茶屋TRビル"},
 {"n": "KOMAZAWA Park Quarter", "jp": "駒沢パーククォーター店", "pref": "東京都", "lat": 35.629646, "lng": 139.664739, "hours": "07:00～22:00", "type": 1, "addr": "東京都 世田谷区 上馬3-18-7 KOMAZAWA Park Quarter1階"},
 {"n": "Komazawa 1-chome", "jp": "駒沢1丁目店", "pref": "東京都", "lat": 35.625619, "lng": 139.659794, "hours": "07:00～22:00", "type": 8, "addr": "東京都 世田谷区 駒沢1-24-5"},
 {"n": "Sakurashinmachi", "jp": "桜新町店", "pref": "東京都", "lat": 35.628376, "lng": 139.646753, "hours": "07:00～22:00", "type": 1, "addr": "東京都 世田谷区 桜新町2-10-4"},
@@ -1386,7 +1386,6 @@
 {"n": "AEON MALL Yokkaichikita", "jp": "イオンモール四日市北店", "pref": "三重県", "lat": 35.004179, "lng": 136.660156, "hours": "10:00～21:00", "type": 1, "addr": "三重県 四日市市 富州原町2-40 イオンモール四日市北"},
 {"n": "AEON MALL Toin", "jp": "イオンモール東員店", "pref": "三重県", "lat": 35.059876, "lng": 136.582215, "hours": "10:00～20:00", "type": 1, "addr": "三重県 員弁郡 東員町長深510-1 イオンモール東員"},
 {"n": "AEON MALL Kuwana", "jp": "イオンモール桑名店", "pref": "三重県", "lat": 35.068981, "lng": 136.665436, "hours": "09:00～21:00", "type": 1, "addr": "三重県 桑名市 新西方1-22 イオンモール桑名"},
-{"n": "Kuwana SANSHI PARK", "jp": "桑名サンシパーク店", "pref": "三重県", "lat": 35.077171, "lng": 136.609524, "hours": "08:00～23:00", "type": 3, "addr": "三重県 桑名市 大仲新田111-1 桑名サンシパーク"},
 {"n": "Jazz Dream Nagashima", "jp": "ジャズドリーム長島店", "pref": "三重県", "lat": 35.02722, "lng": 136.728809, "hours": "10:00～20:00", "type": 2, "addr": "三重県 桑名市 長島町浦安368 三井アウトレットパーク ジャズドリーム長島"},
 {"n": "EXPASA Gozaisho Service Area Down Lane", "jp": "EXPASA御在所サービスエリア（下り線）店", "pref": "三重県", "lat": 35.01539, "lng": 136.597593, "hours": "07:00～21:00", "type": 1, "addr": "三重県 四日市市 山之一色町乱取口1491-2　 東名阪自動車道　EXPASA御在所(下り線）"},
 {"n": "EXPASA Gozaisho Service Area Up Lane", "jp": "EXPASA御在所サービスエリア(上り線)店", "pref": "三重県", "lat": 35.015743, "lng": 136.593387, "hours": "07:00～21:00", "type": 1, "addr": "三重県 四日市市 山之一色町池の谷口1569-2 東名阪自動車道　EXPASA御在所(上り線)"},
@@ -2121,9 +2120,10 @@
 {"n": "STARBUCKS RESERVE(R) Cafe Nagoya Sakae HAERA", "jp": "スターバックス リザーブ(R) カフェ 名古屋 栄 HAERA店", "pref": "愛知県", "lat": 35.166017, "lng": 136.910495, "hours": "07:00～22:00", "type": 1, "addr": "愛知県 名古屋市中区 錦3-25-1 HAERA B2F"},
 {"n": "Nishitetsu Kasugabaru Eki", "jp": "西鉄春日原駅店", "pref": "福岡県", "lat": 33.534265, "lng": 130.475825, "hours": "07:00～22:00", "type": 1, "addr": "福岡県 春日市 春日原北町90-1 レイリア春日原1階"},
 {"n": "Hitachiota", "jp": "常陸太田店", "pref": "茨城県", "lat": 36.544262, "lng": 140.535538, "hours": "07:00～22:00", "type": 3, "addr": "茨城県 常陸太田市 東部土地区画整理事業3-1街区21画地"},
-{"n": "Chubu Int l Airport Sky Town", "jp": "中部国際空港スカイタウン店", "pref": "愛知県", "lat": 34.856043, "lng": 136.818364, "hours": "07:00～22:00", "type": 1, "addr": "愛知県 常滑市 セントレア1-1 中部国際空港セントレア(4F)"},
+{"n": "Chubu Int l Airport Sky Town", "jp": "中部国際空港スカイタウン店", "pref": "愛知県", "lat": 34.855867, "lng": 136.816838, "hours": "07:00～22:00", "type": 1, "addr": "愛知県 常滑市 セントレア1-1 中部国際空港セントレア(4F)"},
 {"n": "Chubu Int l Airport Int l Flight Gate17", "jp": "中部国際空港国際線17番ゲート店", "pref": "愛知県", "lat": 34.855402, "lng": 136.814593, "hours": "07:00～22:00", "type": 1, "addr": "愛知県 常滑市 セントレア1-1 中部国際空港セントレア(3F)"},
 {"n": "Chubu Int l Airport FLIGHT OF DREAMS", "jp": "中部国際空港FLIGHT OF DREAMS店", "pref": "愛知県", "lat": 34.852031, "lng": 136.820616, "hours": "07:00～21:00", "type": 1, "addr": "愛知県 常滑市 セントレア1-1 FLIGHT OF DREAMS"},
 {"n": "Chubu Int l Airport Departure Lobby", "jp": "中部国際空港出発ロビー店", "pref": "愛知県", "lat": 34.85732, "lng": 136.81786, "hours": "07:00～21:00", "type": 1, "addr": "愛知県 常滑市 セントレア1-1 中部国際空港セントレア(3F)"},
-{"n": "M`av Urayasu", "jp": "マーヴ浦安店", "pref": "千葉県", "lat": 35.662201, "lng": 139.895527, "hours": "07:00～22:00", "type": 1, "addr": "千葉県 浦安市 当代島1-1-4 マーヴ浦安"}
+{"n": "M`av Urayasu", "jp": "マーヴ浦安店", "pref": "千葉県", "lat": 35.662201, "lng": 139.895527, "hours": "07:00～22:00", "type": 1, "addr": "千葉県 浦安市 当代島1-1-4 マーヴ浦安"},
+{"n": "Nagasaki HAMACROSS411", "jp": "長崎ハマクロス411店", "pref": "長崎県", "lat": 32.740653, "lng": 129.880226, "hours": "07:30～22:00", "type": 1, "addr": "長崎県 長崎市 浜町4-11 ハマクロス411 1階"}
 ]
