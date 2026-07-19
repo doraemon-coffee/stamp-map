@@ -424,7 +424,7 @@
 {"n": "Narita Airport Terminal2 Arrival Lobby South", "jp": "成田空港第2ターミナル到着ロビー南店", "pref": "千葉県", "lat": 35.769231, "lng": 140.391864, "hours": "07:00～21:00", "type": 2, "addr": "千葉県 成田市 古込1-1"},
 {"n": "Narita Airport Terminal 2 Satellite", "jp": "成田空港第2ターミナルサテライト店", "pref": "千葉県", "lat": 35.771721, "lng": 140.396265, "hours": "07:30～21:30", "type": 2, "addr": "千葉県 成田市 古込1-1 成田空港第2旅客ターミナルビル 3階"},
 {"n": "Narita Airport Terminal2 Arrival Lobby North", "jp": "成田空港第2ターミナル到着ロビー北店", "pref": "千葉県", "lat": 35.771092, "lng": 140.390534, "hours": "07:00～21:30", "type": 2, "addr": "千葉県 成田市 古込1-1 成田空港第2旅客ターミナルビル 1階"},
-{"n": "Narita Airport Terminal 1", "jp": "成田空港店", "pref": "千葉県", "lat": 35.76223, "lng": 140.387772, "hours": "", "type": 1, "addr": "千葉県 成田市 三里塚御料牧場1-1 成田空港第１旅客ターミナルビル"},
+{"n": "Narita Airport Terminal 1", "jp": "成田空港店", "pref": "千葉県", "lat": 35.76223, "lng": 140.387772, "hours": "07:00～21:30", "type": 1, "addr": "千葉県 成田市 三里塚御料牧場1-1 成田空港第１旅客ターミナルビル"},
 {"n": "Narita Airport Terminal 1 Dept. Lobby", "jp": "成田空港第1ターミナル店", "pref": "千葉県", "lat": 35.760083, "lng": 140.3873, "hours": "07:00～21:00", "type": 1, "addr": "千葉県 成田市 三里塚御料牧場1-1 成田空港第1旅客ターミナル中央ビル"},
 {"n": "Narita Airport Terminal 1 Satellite 2", "jp": "成田空港第1ターミナル第2サテライト店", "pref": "千葉県", "lat": 35.761267, "lng": 140.38649, "hours": "08:00～21:00", "type": 1, "addr": "千葉県 成田市 三里塚御料牧場1-1 成田国際空港第1旅客ターミナルビル"},
 {"n": "Michino-eki Minorinosato Togane", "jp": "道の駅みのりの郷東金店", "pref": "千葉県", "lat": 35.574759, "lng": 140.386247, "hours": "08:00～22:00", "type": 3, "addr": "千葉県 東金市 田間1330-1 みのりの郷東金"},
@@ -467,7 +467,6 @@
 {"n": "Tokyo Eki Yaesukitaguchi TOKYO GIFT PALETTE", "jp": "東京駅八重洲北口 東京ギフトパレット店", "pref": "東京都", "lat": 35.678409, "lng": 139.771621, "hours": "06:30～22:00", "type": 1, "addr": "東京都 千代田区 丸の内1-9-1 東京駅"},
 {"n": "GRANSTA TOKYO B1", "jp": "グランスタ東京B1店", "pref": "東京都", "lat": 35.678519, "lng": 139.770163, "hours": "07:00～22:00", "type": 1, "addr": "東京都 千代田区 丸の内1ー9ー1 グランスタ東京B1"},
 {"n": "Tokyo Midtown Hibiya", "jp": "東京ミッドタウン日比谷店", "pref": "東京都", "lat": 35.670223, "lng": 139.762238, "hours": "07:00～22:30", "type": 1, "addr": "東京都 千代田区 有楽町1-1-4 東京ミッドタウン日比谷"},
-{"n": "Yurakucho METROPIA", "jp": "有楽町メトロピア店", "pref": "東京都", "lat": 35.672571, "lng": 139.766313, "hours": "07:00～22:00", "type": 5, "addr": "東京都 千代田区 有楽町1-11-1 東京メトロ有楽町駅構内"},
 {"n": "JR Yurakucho Eki Kyobashiguchi", "jp": "JR有楽町駅京橋口店", "pref": "東京都", "lat": 35.6717, "lng": 139.766837, "hours": "07:00～22:00", "type": 1, "addr": "東京都 千代田区 有楽町2-9"},
 {"n": "Hibiya City", "jp": "日比谷シティ店", "pref": "東京都", "lat": 35.667031, "lng": 139.757531, "hours": "07:00～20:00", "type": 1, "addr": "東京都 千代田区 内幸町2-2-3 日比谷国際ビルヂング B1F(B132)"},
 {"n": "Sanno Park Tower", "jp": "山王パークタワー店", "pref": "東京都", "lat": 35.670039, "lng": 139.743474, "hours": "07:00～22:00", "type": 1, "addr": "東京都 千代田区 永田町2-11-1 山王パークタワー"},
@@ -2118,12 +2117,14 @@
 {"n": "Shibuya Hikarie Nai SinQs", "jp": "渋谷ヒカリエ内ShinQs店", "pref": "東京都", "lat": 35.655764, "lng": 139.706787, "hours": "07:30～21:00", "type": 1, "addr": "東京都 渋谷区 渋谷2-21-1 渋谷ヒカリエ内ShinQs　B1F"},
 {"n": "STARBUCKS Tea & Cafe Tennoji MIO Honkan 3F", "jp": "スターバックス ティー＆カフェ 天王寺ミオ本館3階店", "pref": "大阪府", "lat": 34.643552, "lng": 135.51699, "hours": "08:00～22:00", "type": 1, "addr": "大阪府 大阪市天王寺区 悲田院町10-39 天王寺ミオ本館"},
 {"n": "STARBUCKS RESERVE(R) Cafe Nagoya Sakae HAERA", "jp": "スターバックス リザーブ(R) カフェ 名古屋 栄 HAERA店", "pref": "愛知県", "lat": 35.166017, "lng": 136.910495, "hours": "07:00～22:00", "type": 1, "addr": "愛知県 名古屋市中区 錦3-25-1 HAERA B2F"},
-{"n": "Nishitetsu Kasugabaru Eki", "jp": "西鉄春日原駅店", "pref": "福岡県", "lat": 33.534265, "lng": 130.475825, "hours": "07:00～22:00", "type": 1, "addr": "福岡県 春日市 春日原北町90-1 レイリア春日原1階"},
+{"n": "Nishitetsu Kasugabaru Eki", "jp": "西鉄春日原駅店", "pref": "福岡県", "lat": 33.534265, "lng": 130.475825, "hours": "07:00～22:00", "type": 1, "addr": "福岡県 春日市 春日原北町3-90-1 レイリア春日原1階"},
 {"n": "Hitachiota", "jp": "常陸太田店", "pref": "茨城県", "lat": 36.544262, "lng": 140.535538, "hours": "07:00～22:00", "type": 3, "addr": "茨城県 常陸太田市 東部土地区画整理事業3-1街区21画地"},
 {"n": "Chubu Int l Airport Sky Town", "jp": "中部国際空港スカイタウン店", "pref": "愛知県", "lat": 34.855867, "lng": 136.816838, "hours": "07:00～22:00", "type": 1, "addr": "愛知県 常滑市 セントレア1-1 中部国際空港セントレア(4F)"},
 {"n": "Chubu Int l Airport Int l Flight Gate17", "jp": "中部国際空港国際線17番ゲート店", "pref": "愛知県", "lat": 34.855402, "lng": 136.814593, "hours": "07:00～22:00", "type": 1, "addr": "愛知県 常滑市 セントレア1-1 中部国際空港セントレア(3F)"},
 {"n": "Chubu Int l Airport FLIGHT OF DREAMS", "jp": "中部国際空港FLIGHT OF DREAMS店", "pref": "愛知県", "lat": 34.852031, "lng": 136.820616, "hours": "07:00～21:00", "type": 1, "addr": "愛知県 常滑市 セントレア1-1 FLIGHT OF DREAMS"},
 {"n": "Chubu Int l Airport Departure Lobby", "jp": "中部国際空港出発ロビー店", "pref": "愛知県", "lat": 34.85732, "lng": 136.81786, "hours": "07:00～21:00", "type": 1, "addr": "愛知県 常滑市 セントレア1-1 中部国際空港セントレア(3F)"},
 {"n": "M`av Urayasu", "jp": "マーヴ浦安店", "pref": "千葉県", "lat": 35.662201, "lng": 139.895527, "hours": "07:00～22:00", "type": 1, "addr": "千葉県 浦安市 当代島1-1-4 マーヴ浦安"},
-{"n": "Nagasaki HAMACROSS411", "jp": "長崎ハマクロス411店", "pref": "長崎県", "lat": 32.740653, "lng": 129.880226, "hours": "07:30～22:00", "type": 1, "addr": "長崎県 長崎市 浜町4-11 ハマクロス411 1階"}
+{"n": "Nagasaki HAMACROSS411", "jp": "長崎ハマクロス411店", "pref": "長崎県", "lat": 32.740653, "lng": 129.880226, "hours": "07:30～22:00", "type": 1, "addr": "長崎県 長崎市 浜町4-11 ハマクロス411 1階"},
+{"n": "Aichi Health Village Park Harappa", "jp": "あいち健康の森公園Harappa店", "pref": "愛知県", "lat": 34.990623, "lng": 136.947607, "hours": "08:00～21:00", "type": 1, "addr": "愛知県 大府市 森岡町9-464"},
+{"n": "Kuwana Onaka Shinden", "jp": "桑名大仲新田店", "pref": "三重県", "lat": 35.079421, "lng": 136.613864, "hours": "07:00～22:30", "type": 3, "addr": "三重県 桑名市 大仲新田252-10"}
 ]
