@@ -1,4 +1,8 @@
 [
+  {"date": "2026-08-09", "type": "open", "store": "JR大宮駅 西口店", "pref": "埼玉県", "storeIdx": 2131},
+  {"date": "2026-08-09", "type": "open", "store": "スターバックス リザーブ(R) カフェ 天神ビジネスセンターⅡ店", "pref": "福岡県", "storeIdx": 2132},
+  {"date": "2026-08-09", "type": "open", "store": "鯖江店", "pref": "福井県", "storeIdx": 2133},
+  {"date": "2026-08-09", "type": "open", "store": "横浜海の公園店", "pref": "神奈川県", "storeIdx": 2134},
   {"date": "2026-08-02", "type": "open", "store": "アトレ吉祥寺店(2F)", "pref": "東京都", "storeIdx": 2127},
   {"date": "2026-08-02", "type": "open", "store": "Olive LOUNGE 吉祥寺店", "pref": "東京都", "storeIdx": 2128},
   {"date": "2026-08-02", "type": "open", "store": "相模大野16号鵜野森店", "pref": "神奈川県", "storeIdx": 2129},
