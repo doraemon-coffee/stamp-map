@@ -35,8 +35,5 @@
   {"date": "2026-06-14", "type": "close", "store": "天王寺ミオ 本館3階店", "pref": "大阪府"},
   {"date": "2026-06-07", "type": "open", "store": "黒部店", "pref": "富山県", "storeIdx": 2112},
   {"date": "2026-05-31", "type": "open", "store": "アクロスプラザ飯塚太郎丸店", "pref": "福岡県", "storeIdx": 2110},
-  {"date": "2026-05-31", "type": "open", "store": "花巻店", "pref": "岩手県", "storeIdx": 2111},
-  {"date": "2026-05-20", "type": "open", "store": "門真市立文化創造図書館KADOMADO店", "pref": "大阪府", "storeIdx": 2107},
-  {"date": "2026-05-20", "type": "open", "store": "門司赤煉瓦プレイス店", "pref": "福岡県", "storeIdx": 2108},
-  {"date": "2026-05-20", "type": "open", "store": "イオンモール新瑞橋店", "pref": "愛知県", "storeIdx": 2109}
+  {"date": "2026-05-31", "type": "open", "store": "花巻店", "pref": "岩手県", "storeIdx": 2111}
 ]
