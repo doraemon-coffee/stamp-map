@@ -1,4 +1,6 @@
 [
+  {"date": "2026-09-13", "type": "open", "store": "トフロム八重洲タワー店", "pref": "東京都", "storeIdx": 2136},
+  {"date": "2026-09-13", "type": "open", "store": "岩沼店", "pref": "宮城県", "storeIdx": 2137},
   {"date": "2026-09-06", "type": "open", "store": "長野若槻店", "pref": "長野県", "storeIdx": 2135},
   {"date": "2026-08-16", "type": "open", "store": "砺波店", "pref": "富山県", "storeIdx": 2134},
   {"date": "2026-08-16", "type": "close", "store": "エキマルシェ新大阪店", "pref": "大阪府"},
@@ -27,11 +29,5 @@
   {"date": "2026-07-05", "type": "close", "store": "中部国際空港セントレアFLIGHT OF DREAMS店", "pref": "愛知県"},
   {"date": "2026-07-05", "type": "close", "store": "高松レインボーロード店", "pref": "香川県"},
   {"date": "2026-06-28", "type": "open", "store": "常陸太田店", "pref": "茨城県", "storeIdx": 2117},
-  {"date": "2026-06-28", "type": "close", "store": "中部国際空港第２セントレアビル店", "pref": "愛知県"},
-  {"date": "2026-06-14", "type": "open", "store": "渋谷ヒカリエ内ShinQs店", "pref": "東京都", "storeIdx": 2113},
-  {"date": "2026-06-14", "type": "open", "store": "スターバックス ティー＆カフェ 天王寺ミオ本館3階店", "pref": "大阪府", "storeIdx": 2114},
-  {"date": "2026-06-14", "type": "open", "store": "スターバックス リザーブ(R) カフェ 名古屋 栄 HAERA店", "pref": "愛知県", "storeIdx": 2115},
-  {"date": "2026-06-14", "type": "open", "store": "西鉄春日原駅店", "pref": "福岡県", "storeIdx": 2116},
-  {"date": "2026-06-14", "type": "close", "store": "渋谷ヒカリエ ShinQs店", "pref": "東京都"},
-  {"date": "2026-06-14", "type": "close", "store": "天王寺ミオ 本館3階店", "pref": "大阪府"}
+  {"date": "2026-06-28", "type": "close", "store": "中部国際空港第２セントレアビル店", "pref": "愛知県"}
 ]
