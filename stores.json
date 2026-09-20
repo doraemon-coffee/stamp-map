@@ -1684,7 +1684,7 @@
 {"n": "Nishinomiya Kurakake", "jp": "西宮鞍掛店", "pref": "兵庫県", "lat": 34.725833, "lng": 135.341389, "hours": "07:00～23:00", "type": 3, "addr": "兵庫県 西宮市 鞍掛町6-7"},
 {"n": "Nishinomiya Tateishi", "jp": "西宮建石店", "pref": "兵庫県", "lat": 34.725214, "lng": 135.33676, "hours": "07:00～23:00", "type": 3, "addr": "兵庫県 西宮市 建石町2-33"},
 {"n": "EBISTA Nishinomiya", "jp": "エビスタ西宮店", "pref": "兵庫県", "lat": 34.733466, "lng": 135.341963, "hours": "07:00～22:00", "type": 1, "addr": "兵庫県 西宮市 田中町1-6 エビスタ西宮"},
-{"n": "Kwansei Gakuin University", "jp": "関西学院大学店", "pref": "兵庫県", "lat": 34.764267, "lng": 135.349306, "hours": "", "type": 2, "addr": "兵庫県 西宮市 上ヶ原一番町1-155"},
+{"n": "Kwansei Gakuin University", "jp": "関西学院大学店", "pref": "兵庫県", "lat": 34.764267, "lng": 135.349306, "hours": "08:30～19:00", "type": 2, "addr": "兵庫県 西宮市 上ヶ原一番町1-155"},
 {"n": "Nishinomiya Oshima", "jp": "西宮大島店", "pref": "兵庫県", "lat": 34.759484, "lng": 135.370576, "hours": "08:00～22:00", "type": 3, "addr": "兵庫県 西宮市 大島町6-16"},
 {"n": "ACTA Nishinomiya", "jp": "アクタ西宮店", "pref": "兵庫県", "lat": 34.744074, "lng": 135.361086, "hours": "08:00～22:00", "type": 1, "addr": "兵庫県 西宮市 北口町1-2 ACTA西宮 東館"},
 {"n": "VIERRA Koushienguchi", "jp": "ビエラ甲子園口店", "pref": "兵庫県", "lat": 34.735597, "lng": 135.377974, "hours": "08:00～22:00", "type": 1, "addr": "兵庫県 西宮市 甲子園口2-1-37"},
@@ -2011,7 +2011,6 @@
 {"n": "SAKURA MACHI Kumamoto", "jp": "サクラマチ 熊本店", "pref": "熊本県", "lat": 32.796908, "lng": 130.70622, "hours": "07:00～22:00", "type": 1, "addr": "熊本県 熊本市中央区 桜町3-10 SAKURA MACHI Kumamoto"},
 {"n": "Kumamoto Shower-dori", "jp": "熊本シャワー通り店", "pref": "熊本県", "lat": 32.795312, "lng": 130.710083, "hours": "08:00～22:00", "type": 1, "addr": "熊本県 熊本市中央区 下通2-3-1 エスキュービック"},
 {"n": "Kumamoto New-S", "jp": "熊本Ｎｅｗ－Ｓ店", "pref": "熊本県", "lat": 32.799821, "lng": 130.712972, "hours": "08:00～22:00", "type": 1, "addr": "熊本県 熊本市中央区 上通町2-2 Ｎｅｗ－Ｓ"},
-{"n": "AEON MALL Kumamoto", "jp": "イオンモール熊本店", "pref": "熊本県", "lat": 32.734281, "lng": 130.745905, "hours": "10:00～21:00", "type": 1, "addr": "熊本県 上益城郡 嘉島町上島長池2232"},
 {"n": "Kitakumamoto Service Area Up Lane", "jp": "北熊本サービスエリア（上り線）店", "pref": "熊本県", "lat": 32.89066, "lng": 130.720556, "hours": "07:00～21:00", "type": 1, "addr": "熊本県 熊本市北区 改寄町1199 九州自動車道 北熊本サービスエリア（上り線）内"},
 {"n": "Kumamoto Interchange", "jp": "熊本インターチェンジ店", "pref": "熊本県", "lat": 32.833756, "lng": 130.781139, "hours": "08:00～23:00", "type": 3, "addr": "熊本県 熊本市東区 神園1-1-6"},
 {"n": "Kumamoto Mashiki Interchange", "jp": "熊本益城インターチェンジ店", "pref": "熊本県", "lat": 32.787391, "lng": 130.781573, "hours": "08:00～22:00", "type": 3, "addr": "熊本県 熊本市東区 佐土原2-4-160"},
@@ -2136,5 +2135,11 @@
 {"n": "Tonami", "jp": "砺波店", "pref": "富山県", "lat": 36.627791, "lng": 136.959019, "hours": "08:00～22:00", "type": 3, "addr": "富山県 砺波市 豊町1-17-10"},
 {"n": "Nagano Wakatsuki", "jp": "長野若槻店", "pref": "長野県", "lat": 36.672266, "lng": 138.219709, "hours": "07:00～23:00", "type": 3, "addr": "長野県 長野市 稲田1-7-18"},
 {"n": "TOFROM YAESU TOWER", "jp": "トフロム八重洲タワー店", "pref": "東京都", "lat": 35.677734, "lng": 139.773881, "hours": "07:00～22:00", "type": 1, "addr": "東京都 中央区 八重洲1-6-1 TOFROM YAESU TOWER BF"},
-{"n": "Iwanuma", "jp": "岩沼店", "pref": "宮城県", "lat": 38.102329, "lng": 140.873694, "hours": "07:00～22:00", "type": 3, "addr": "宮城県 岩沼市 桜2-8-35"}
+{"n": "Iwanuma", "jp": "岩沼店", "pref": "宮城県", "lat": 38.102329, "lng": 140.873694, "hours": "07:00～22:00", "type": 3, "addr": "宮城県 岩沼市 桜2-8-35"},
+{"n": "SHARE LOUNGE JIYUGAOKA MUSE SQUARE", "jp": "SHARE LOUNGE 自由が丘ミューズスクエア店", "pref": "東京都", "lat": 35.604752, "lng": 139.671752, "hours": "08:00～22:00", "type": 1, "addr": "東京都 目黒区 自由が丘1-29-1 JIYUGAOKA MUSE SQUARE 4F"},
+{"n": "JR Kyobashi Eki Kitaguchi", "jp": "JR京橋駅北口店", "pref": "大阪府", "lat": 34.694363, "lng": 135.536328, "hours": "07:00～22:00", "type": 1, "addr": "大阪府 大阪市都島区 東野田町3-2-7"},
+{"n": "SHARE LOUNGE Tamachi Eki-mae", "jp": "SHARE LOUNGE 田町駅前店", "pref": "東京都", "lat": 35.64378, "lng": 139.750188, "hours": "07:00～23:00", "type": 1, "addr": "東京都 港区 芝5-31-10 サンシャインビル 1F"},
+{"n": "Hamanako Service Area ONE SEANA", "jp": "浜名湖サービスエリア ONE SEANA店", "pref": "静岡県", "lat": 34.776889, "lng": 137.608984, "hours": "08:00～20:00", "type": 1, "addr": "静岡県 浜松市浜名区 三ヶ日町佐久米崎山2"},
+{"n": "AEON TOWN Higashi-Narashino", "jp": "イオンタウン東習志野店", "pref": "千葉県", "lat": 35.696341, "lng": 140.070899, "hours": "08:00～22:00", "type": 3, "addr": "千葉県 習志野市 東習志野6-7-8 イオンタウン東習志野"},
+{"n": "STARBUCKS Tea & Cafe Okayama Ichibangai", "jp": "スターバックス ティー＆カフェ 岡山一番街店", "pref": "岡山県", "lat": 34.662648, "lng": 133.921194, "hours": "07:00～22:00", "type": 1, "addr": "岡山県 岡山市北区 駅元町1一番街地下1号"}
 ]
