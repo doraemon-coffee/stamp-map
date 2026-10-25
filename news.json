@@ -1,4 +1,5 @@
 [
+  {"date": "2026-10-25", "type": "open", "store": "ボーノ相模大野店", "pref": "神奈川県", "storeIdx": 2140},
   {"date": "2026-10-11", "type": "close", "store": "西宮鞍掛店", "pref": "兵庫県"},
   {"date": "2026-10-04", "type": "close", "store": "渋谷フクラス店", "pref": "東京都"},
   {"date": "2026-10-04", "type": "close", "store": "代沢5丁目店", "pref": "東京都"},
@@ -28,8 +29,5 @@
   {"date": "2026-08-02", "type": "open", "store": "Olive LOUNGE 吉祥寺店", "pref": "東京都", "storeIdx": 2120},
   {"date": "2026-08-02", "type": "open", "store": "相模大野16号鵜野森店", "pref": "神奈川県", "storeIdx": 2121},
   {"date": "2026-08-02", "type": "open", "store": "アトレ吉祥寺店(B1)", "pref": "東京都", "storeIdx": 2122},
-  {"date": "2026-08-02", "type": "close", "store": "アトレ吉祥寺店", "pref": "東京都"},
-  {"date": "2026-07-19", "type": "open", "store": "あいち健康の森公園Harappa店", "pref": "愛知県", "storeIdx": 2117},
-  {"date": "2026-07-19", "type": "open", "store": "桑名大仲新田店", "pref": "三重県", "storeIdx": 2118},
-  {"date": "2026-07-19", "type": "close", "store": "有楽町メトロピア店", "pref": "東京都"}
+  {"date": "2026-08-02", "type": "close", "store": "アトレ吉祥寺店", "pref": "東京都"}
 ]
